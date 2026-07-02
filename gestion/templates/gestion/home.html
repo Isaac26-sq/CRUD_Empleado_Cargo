@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="p-5 bg-white rounded shadow-sm">
+    <h1 class="mb-3">CRUD de Empleados y Cargos</h1>
+    <p class="text-muted">
+        Proyecto Django que implementa un CRUD completo de dos formas distintas:
+        <strong>Vistas Basadas en Funciones (VBF)</strong> y
+        <strong>Vistas Basadas en Clases (VBC)</strong>.
+    </p>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Etapa 1 · Vistas Basadas en Funciones</h5>
+                    <p class="card-text text-muted">Cada operación es una función que controla el flujo manualmente.</p>
+                    <a href="{% url 'gestion:cargo_lista_fbv' %}" class="btn btn-outline-primary btn-sm">Cargos</a>
+                    <a href="{% url 'gestion:empleado_lista_fbv' %}" class="btn btn-outline-primary btn-sm">Empleados</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Etapa 2 · Vistas Basadas en Clases</h5>
+                    <p class="card-text text-muted">Usa las vistas genéricas de Django (ListView, CreateView, etc.).</p>
+                    <a href="{% url 'gestion:cargo_lista_cbv' %}" class="btn btn-outline-success btn-sm">Cargos</a>
+                    <a href="{% url 'gestion:empleado_lista_cbv' %}" class="btn btn-outline-success btn-sm">Empleados</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
