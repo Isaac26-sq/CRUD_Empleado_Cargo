@@ -6,20 +6,10 @@ from .models import Cargo, Empleado
 from .forms import CargoForm, EmpleadoForm
 
 
-# ==========================================================================
-#  PÁGINA DE INICIO
-# ==========================================================================
 def home(request):
     return render(request, 'gestion/home.html')
 
 
-# ==========================================================================
-#  ETAPA 1 — VISTAS BASADAS EN FUNCIONES (VBF / FBV)
-# --------------------------------------------------------------------------
-#  Cada operación del CRUD es una función. El programador controla
-#  manualmente el flujo: leer el método, validar el formulario, guardar
-#  y redirigir.
-# ==========================================================================
 
 # ---------- CRUD de CARGO (VBF) ----------
 
@@ -133,13 +123,6 @@ def empleado_eliminar_fbv(request, pk):
     })
 
 
-# ==========================================================================
-#  ETAPA 2 — VISTAS BASADAS EN CLASES (VBC / CBV)
-# --------------------------------------------------------------------------
-#  Django trae vistas genéricas que ya implementan el patrón CRUD.
-#  Solo se declara el modelo, el formulario y la plantilla; la lógica
-#  repetitiva (leer método, validar, guardar, redirigir) ya viene hecha.
-# ==========================================================================
 
 # ---------- CRUD de CARGO (VBC) ----------
 

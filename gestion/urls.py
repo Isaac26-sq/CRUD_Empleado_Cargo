@@ -4,12 +4,10 @@ from . import views
 app_name = 'gestion'
 
 urlpatterns = [
-    # -------- Inicio --------
+    
     path('', views.home, name='home'),
 
-    # ==================================================================
-    #  ETAPA 1 — VISTAS BASADAS EN FUNCIONES (VBF)
-    # ==================================================================
+ 
     # CRUD Cargo (VBF)
     path('fbv/cargos/', views.cargo_lista_fbv, name='cargo_lista_fbv'),
     path('fbv/cargos/crear/', views.cargo_crear_fbv, name='cargo_crear_fbv'),
@@ -22,9 +20,6 @@ urlpatterns = [
     path('fbv/empleados/editar/<int:pk>/', views.empleado_editar_fbv, name='empleado_editar_fbv'),
     path('fbv/empleados/eliminar/<int:pk>/', views.empleado_eliminar_fbv, name='empleado_eliminar_fbv'),
 
-    # ==================================================================
-    #  ETAPA 2 — VISTAS BASADAS EN CLASES (VBC)
-    # ==================================================================
     # CRUD Cargo (VBC)
     path('cbv/cargos/', views.CargoListView.as_view(), name='cargo_lista_cbv'),
     path('cbv/cargos/crear/', views.CargoCreateView.as_view(), name='cargo_crear_cbv'),

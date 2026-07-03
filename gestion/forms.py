@@ -29,9 +29,7 @@ class EmpleadoForm(forms.ModelForm):
             'apellidos': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Apellidos'}),
             'correo': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'correo@ejemplo.com'}),
             'sueldo': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': '0.00', 'step': '0.01'}),
-            # type='date' hace que el navegador muestre un selector de fecha.
             'fecha_ingreso': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
-            # El campo cargo se muestra como lista desplegable (Select) con los cargos registrados.
             'cargo': forms.Select(attrs={'class': 'form-select'}),
         }
         labels = {

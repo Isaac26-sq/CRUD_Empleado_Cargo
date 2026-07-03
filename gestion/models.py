@@ -7,7 +7,7 @@ class Cargo(models.Model):
     descripcion = models.CharField(max_length=200, blank=True, null=True)
 
     def __str__(self):
-        # Facilita la visualización en el admin, el shell y los desplegables.
+       
         return self.nombre
 
 
@@ -20,8 +20,8 @@ class Empleado(models.Model):
     fecha_ingreso = models.DateField()
     cargo = models.ForeignKey(
         Cargo,
-        on_delete=models.PROTECT,   # No permite borrar un cargo que tenga empleados asociados.
-        related_name='empleados'    # Permite navegar hacia atrás: cargo.empleados.all()
+        on_delete=models.PROTECT,   
+        related_name='empleados'   
     )
 
     def __str__(self):
